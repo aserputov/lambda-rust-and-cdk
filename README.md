@@ -8,7 +8,7 @@ The two Lambda functions are in the `/resources` folder:
 
 - `my-function` is a Lambda function packaged using the ZIP format and written in Rust with the [AWS Lambda Rust Runtime](https://github.com/awslabs/aws-lambda-rust-runtime). This function uses [Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/lambda-urls.html) to receive and respond to web requests.
 
-- `my-web-app`  is a Lambda function [packaed as a container image](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-images.html) using the [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter) to run a Rust web app built using the [Actix Web](https://actix.rs) framework. This function is also using Lambda function URLs.
+- `my-web-app`  is a Lambda function [packaged as a container image](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-images.html) using the [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter) to run a Rust web app built using the [Actix Web](https://actix.rs) framework. This function is also using Lambda function URLs.
 
 Rust is a very efficient programming language that allows the two functions to run with very little memory and CPU usage. For example, they are both configured with the [minimum allowed memory (128 MB)](https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console). Because Lambda allocates CPU power in proportion to the amount of memory configured, this is also the minimum configurable CPU power. Both functions are are still very performant with a response time of about 1-1.5ms and an initialization time (cold start) of ~20ms for `my-function` and ~400ms for `my-web-app`.
 
