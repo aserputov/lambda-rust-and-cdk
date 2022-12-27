@@ -13,6 +13,7 @@ async fn function_handler(event: Request) -> Result<Response<Body>, Error> {
 
     // Return something that implements IntoResponse.
     // It will be serialized to the right response event automatically by the runtime
+    // Just out of curiosity, never worked with rust before and it's interesting that we don't use `await` below as we would in js.(I mean we only use async at the top, or is it a bug?) 
     let resp = Response::builder()
         .status(200)
         .header("content-type", "text/html")
